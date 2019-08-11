@@ -1,5 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './Components/App';
+import {Provider} from "mobx-react";
+import CounterStore from "./store/counter";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const counter = new CounterStore(); 
+
+ReactDOM.render(
+    <Provider counter={counter}>
+      {/* Provider 에 props 로 넣어줍니다. */}
+      <App />
+    </Provider>,
+    document.getElementById('root')
+  );
