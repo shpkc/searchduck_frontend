@@ -1,6 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
-import { decorate, observable, action } from 'mobx';
 import { observer, inject } from 'mobx-react';
 import sin from "../Images/sin.jpg"
 import jin from "../Images/jin.jpg"

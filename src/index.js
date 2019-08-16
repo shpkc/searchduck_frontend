@@ -8,7 +8,6 @@ const counter = new CounterStore();
 
 ReactDOM.render(
     <Provider counter={counter}>
-      {/* Provider 에 props 로 넣어줍니다. */}
       <App />
     </Provider>,
     document.getElementById('root')

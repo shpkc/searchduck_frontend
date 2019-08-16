@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {useState, useEffect} from 'react';
 import { observer, inject } from 'mobx-react';
-import axios from "axios";
+import {toJS} from "mobx"
 import styled from "styled-components";
 
 
@@ -32,46 +32,54 @@ const ChangeButton = styled.button`
   text-align: center;
   margin-bottom: 30px;`
 
-  const Dollar = styled.div`
+const Dollar = styled.div`
   font-weight:600
   font-size : 20px;
-  opacity: ${props => (props.watch == 1 ? "1" : "0")};
+  opacity: ${props => (props.watch == 1 ? "0" : "1")};
   transition: all 0.5s ease-in;
-
+` 
+const Info = styled.div`
+  color : blue;
+  font-size : 14px;
+  font-bold : 400
 `
 
-const exchangeEndpoint = "https://api.exchangeratesapi.io/latest?base=USD"
 
-@inject('counter')
-@observer
+const Calc = ({Number, Total, InfoList, GetInfo, Rate, GetCapital}) => {
 
-class Counter extends Component {
-  state = {
-    KRW : 1,
-    Button : "실시간 USD로 변환",
-    Opacity : 0
-  }
+  const [KRW, changeKRW] = useState(1)
+  const [Button, changeButton] = useState("실시간 USD로 변환")
+  const [Opacity, changeOpacity] = useState(0);
   
-  async componentDidMount() {
-    let {data:{rates:{KRW}}} = await axios.get(exchangeEndpoint)
-    this.setState({KRW: Math.floor(KRW)})
-  }
+  useEffect(()=>{
+    GetCapital()
+    GetInfo("rate")
+  },[])
 
-  
-  render() {
-    const { counter, KRW } = this.props;
-    
+  let rate = toJS(Rate)
+  let wordList = toJS(InfoList)
+
     return (
       <Wrapper>
-        <Count>수량 : {counter.number}개</Count>
-        <Price>총 가격 : {counter.total}원</Price>
-        <ChangeButton onClick={()=>this.state.Button == "실시간 USD로 변환" ? this.setState({Button:"원화로 변환", Opacity:1}) : this.setState({Button:"실시간 USD로 변환", Opacity:0})}>
-        {this.state.Button}
+        <Count>수량 : {Number}개</Count>
+        <Price>총 가격 : {Total}원</Price>
+        <ChangeButton onClick={()=>Button == "실시간 USD로 변환" ? changeButton("원화로 변경") + changeOpacity(1) : changeButton("실시간 USD로 변환") + changeOpacity(0)}>
+        {Button}
         </ChangeButton>
-        <Dollar watch={this.state.Opacity}>{(counter.total / this.state.KRW).toFixed(2)}$</Dollar>
+        <Dollar watch={Opacity}>{rate.rates ? (Total / rate.rates.KRW).toFixed(2) : "0.00"}$</Dollar>
+        {wordList.map(world => {
+          return <Info>{world.name} {world.capital}</Info>
+        })}
       </Wrapper>
     );
   }
-}
 
-export default Counter;
+export default inject(({counter})=>({
+  Number: counter.number,
+  Total : counter.total,
+  InfoList : counter.infoList,
+  GetInfo : counter.getInfo,
+  Rate : counter.rate,
+  GetCapital : counter.getCapital
+}
+))(observer(Calc))

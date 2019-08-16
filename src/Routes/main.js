@@ -1,35 +1,46 @@
 import React from "react";
 import styled from "styled-components";
-import Menu from "../Components/menu";
-import Calc from "../Components/calc"
+import ReactDOM from "react-dom";
 
-const HomeWrapper = styled.div`
+const MainWrapper = styled.div`
     width: 100%;
     display:flex;
-    justify-content : center;
-
+    justify-content: center;
+    align-items: center
+    min-height: 100vh;
 `
-const MainMenu = styled.div`
-    width : 80%;
-    background-color : rgb(152, 165, 179);
+const Main = styled.div`
+    width: 100%;
+    max-width: ${props => props.theme.maxWidth};
 `
-
-const MainCalc = styled.div`
-    width : 20%;
-    background-color : white;
+const IframeWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    iframe{
+        background: white;
+        max-width: 450px; 
+        width: 450px;
+        border-radius: 3px; 
+        border: 1px solid rgb(219, 219, 219); 
+        box-shadow: none; 
+        margin: 100px 0px 100px; 
+        min-width: 326px; 
+        padding: 0px;
+    }
 `
 
 export default () => {
+
+
     return(
-        <>
-        <HomeWrapper>
-            <MainMenu>
-                <Menu/>
-            </MainMenu>
-            <MainCalc>
-                <Calc />
-            </MainCalc>
-        </HomeWrapper>
-        </>
+        <MainWrapper>
+        <Main>
+        <IframeWrapper>
+        <iframe src="https://www.instagram.com/p/B03mYvUAA-O/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0" height="765" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" />
+        <iframe src="https://www.instagram.com/p/B1BlTUDjrNJ/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0" height="765" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" />
+        <iframe src="https://www.instagram.com/p/B0nK8nNHN43/embed/" allowtransparency="true" allowfullscreen="true" frameborder="0" height="765" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" />
+        </IframeWrapper>        
+        </Main>
+        </MainWrapper>
     )
 }
