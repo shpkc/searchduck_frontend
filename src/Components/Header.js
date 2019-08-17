@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import {TwitIcon, YoutubeIcon, FacebookIcon, SearchIcon} from "./Icons"
@@ -106,12 +106,27 @@ const MenuWrapper = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center,
 `
 const Menus = styled.div`
-    width: 100%;
-    max-width: ${props => props.theme.maxWidth};
+    
+    /* width: 100%;
+    max-width: ${props => props.theme.maxWidth}; */
     display: flex;
+    ${props => props.height > 280 && 
+        `background-color: #fff
+         position : fixed
+         border-bottom: 1px solid #eee
+         opacity: 0.9;
+         top: 0;
+         z-index: 99950;
+         width: 100%;
+         max-width: ${props => props.theme.maxWidth};
+         justify-content: center;
+         align-items: center,
+         `
+        
+    }
     
 `
 
@@ -141,7 +156,7 @@ const Menu = styled.div`
     }
     &:hover:before{
         visibility: visible;
-        transform: scaleX(1);
+        transform: scaleX(1)
     }
     
 
@@ -149,6 +164,13 @@ const Menu = styled.div`
 
 
 export default () => {
+    const [yHeight, yChange] = useState(0)
+    useEffect(()=>{
+        window.onscroll = () => {
+            yChange(window.pageYOffset)
+        }
+    },[yHeight])
+
     return (
         <>
     <Header>
@@ -181,8 +203,8 @@ export default () => {
         </SemiTitle>
         </Link>
     </TitleWrapper>
-    <MenuWrapper>
-        <Menus>
+    <MenuWrapper >
+        <Menus height={yHeight}>
             <Menu width={"67%"}>NEWS UPDATE</Menu>
             <Menu width={"60%"}>SCHEDULE</Menu>
             <Menu width={"48%"}>MUSIC</Menu>
