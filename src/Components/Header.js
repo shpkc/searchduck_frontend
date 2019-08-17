@@ -206,9 +206,11 @@ export default () => {
     <MenuWrapper >
         <Menus height={yHeight}>
             <Menu width={"67%"}>NEWS UPDATE</Menu>
-            <Menu width={"60%"}>SCHEDULE</Menu>
+            <Menu width={"59%"}>SCHEDULE</Menu>
             <Menu width={"48%"}>MUSIC</Menu>
-            <Menu width={"60%"}>PRODUCTS</Menu>
+            <Menu width={"73%"}>BLACKPINK MERCH</Menu>
+            <Menu width={"68%"}>PERFORMANCE</Menu>
+            <Menu width={"57%"}>RANKING</Menu>
         </Menus>
     </MenuWrapper>
     </>

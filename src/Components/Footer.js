@@ -26,6 +26,9 @@ const FooterLink = styled.div`
     font-size: 1rem;
     line-height: 2;
     margin : 20px;
+    &:hover{
+        color: rgb(170, 170, 170)
+    }
 `
 
 const LinkWrapper = styled.div`
@@ -110,7 +113,7 @@ export default () => {
                     <FooterLink>ADVERTISE</FooterLink>
                 </Link>
             </LinkWrapper>
-            <Copyright>COPYRIGHT &copy; {new Date().getFullYear()} SEARCH DUCK  </Copyright>
+            <Copyright>COPYRIGHT &copy; {new Date().getFullYear()} SEARCH DOL  </Copyright>
             </FooterWrapper>
             <IconWrapper>
                 <TwitterWrapper>
