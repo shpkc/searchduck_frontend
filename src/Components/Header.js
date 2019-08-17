@@ -194,7 +194,7 @@ export default () => {
     <TitleWrapper>
         <Link to={""}>
         <Title>
-            SEARCH DUCK
+            SEARCH DOL
         </Title>
         </Link>
         <Link to={""}>
