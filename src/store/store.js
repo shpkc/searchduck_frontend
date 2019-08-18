@@ -6,6 +6,12 @@ export default class Store {
   @observable total = 0;
   @observable infoList = []
   @observable rate = 0;
+
+  @observable contentList = [
+
+
+  ]
+  
   @observable julyList = 
   [
     {date: "July 12, 13, 14",

@@ -9,7 +9,7 @@ const MainWrapper = styled.div`
     justify-content: center;
     align-items: center
     min-height: 100vh;
-    margin-top: 30px;
+    margin-top: 60px;
 `
 const Main = styled.div`
     width: 100%;
@@ -26,7 +26,7 @@ const IframeWrapper = styled.div`
         border-radius: 3px; 
         border: 1px solid rgb(219, 219, 219); 
         box-shadow: none; 
-        margin: 100px 0px 100px; 
+        margin-bottom: 100px  
         min-width: 326px; 
         padding: 0px;
         /* width: 100vw
@@ -36,6 +36,7 @@ const IframeWrapper = styled.div`
 
 const ContentsWrapper = styled.div`
     width: 70%
+    padding-right:60px;
 `
 
 const SubWrapper = styled.div`
@@ -88,19 +89,173 @@ const SearchIconWrapper = styled.div`
         cursor: pointer;
     }
 `
-export default () => {
 
+const Frame = styled.div`
+    display: flex;
+    iframe{
+        border: 1px solid rgb(219, 219, 219);
+    }
+    border-bottom: 1px solid #eee;
+    margin-bottom:50px;
+`
+const FrameContents = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 0 4rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+
+`
+
+const Sort = styled.div`
+    color: #dd0311;
+    font-weight: 600;
+    margin-bottom : 15px;
+`
+
+const Title = styled.div`
+    color: #020202
+    font-size: 2em
+    line-height: 1.3
+    &:hover{
+        color: #dd0311
+    }
+`
+const RedBar = styled.div`
+    background: #f24444;
+    content: "";
+    display: block;
+    margin: 0.9375rem 0 1.875rem;
+    width: 150px;
+    height: 3px;
+    
+
+`
+const Date = styled.div`
+    margin: 18px 0 23px 0;
+    color: #999
+`
+
+const ReadMore = styled.div`
+    background: #f24444;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+    width: 114px;
+    height: 44px;
+    padding: 0.9rem 1.25rem;
+    &:hover{
+        background-color: #d93d3d;
+        transition: all 0.6s;
+        cursor: pointer;
+    }
+
+`
+export default () => {
 
     return(
         <MainWrapper>
         <Main>
             <ContentsWrapper>
                 <IframeWrapper>
-                <iframe src="https://www.instagram.com/p/B1BlTUDjrNJ/embed/captioned" height="770" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" />
-                <iframe src="https://www.instagram.com/p/B03mYvUAA-O/embed/captioned" height="770" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" />
-                <iframe src="https://www.instagram.com/p/B0nK8nNHN43/embed/captioned" height="930" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" />
-                <iframe src="https://www.instagram.com/p/B0-IpJ6DZ2E/embed/captioned" height="770" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" />
-                <iframe src="https://www.instagram.com/p/B1MbzWcABhG/embed/captioned" height="850" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" />
+                    <Frame>
+                    <iframe src="https://www.instagram.com/p/B1BlTUDjrNJ/embed/" height="630"/>
+                    <FrameContents>
+                    <Sort>
+                            BLACKPINK INSTAGRAM
+                            
+                        </Sort>
+                        <Title>
+                            BLACKPINK LISA Instagram and Insta Story Update, August 11, 2019
+                        </Title>
+                        <Date>
+                            AUGUST 11, 2019(KST)
+                        </Date>
+                        <RedBar/>
+                        <ReadMore>
+                            READ MORE
+                        </ReadMore>
+                        </FrameContents>
+                    </Frame>
+                    <Frame>
+                    <iframe src="https://www.instagram.com/p/B0-IpJ6DZ2E/embed/" height="550"/>
+                    <FrameContents>
+                        <Sort>
+                            BLACKPINK INSTAGRAM
+                        </Sort>
+                        <Title>
+                            BLACKPINK LISA Instagram and Insta Story Update, August 10, 2019
+                        </Title>
+                        <Date>
+                            AUGUST 10, 2019(KST)
+                        </Date>
+                        <RedBar/>
+                        <ReadMore>
+                            READ MORE
+                        </ReadMore>
+                    </FrameContents>
+                    
+                    </Frame>
+                    <Frame>
+                    <iframe src="https://www.instagram.com/p/B03mYvUAA-O/embed/" height="570"/>
+                    <FrameContents>
+                    <Sort>
+                            BLACKPINK INSTAGRAM
+                            
+                        </Sort>
+                        <Title>
+                            Tommy Brown With BLACKPINK, August 8, 2019
+                        </Title>
+                        <Date>
+                            AUGUST 8, 2019(KST)
+                        </Date>
+                        <RedBar/>
+                        <ReadMore>
+                            READ MORE
+                        </ReadMore>
+                        </FrameContents>
+                    </Frame>
+                    <Frame>
+                    <iframe src="https://www.instagram.com/p/B0nK8nNHN43/embed" height="570"/>
+                    <FrameContents>
+                    <Sort>
+                            BLACKPINK INSTAGRAM
+                            
+                        </Sort>
+                        <Title>
+                            BLACKPINK OFFICIAL Instagram and Insta Story Update, August 1, 2019
+                        </Title>
+                        <Date>
+                            AUGUST 1, 2019(KST)
+                        </Date>
+                        <RedBar/>
+                        <ReadMore>
+                            READ MORE
+                        </ReadMore>
+                        </FrameContents>
+                       
+                    </Frame>
+                    <Frame>
+                    <iframe src="https://www.instagram.com/p/B1MbzWcABhG/embed/" height="620"/>
+                    <FrameContents>
+                    <Sort>
+                            BLACKPINK INSTAGRAM
+                            
+                        </Sort>
+                        <Title>
+                        Producer Tommy Brown Shared New Photos with BLACKPINK and Ariana Grande
+                        </Title>
+                        <Date>
+                            AUGUST 16, 2019(KST)
+                        </Date>
+                        <RedBar/>
+                        <ReadMore>
+                            READ MORE
+                        </ReadMore>
+                        </FrameContents>
+                    </Frame>
                 </IframeWrapper>
             </ContentsWrapper>
             <SubWrapper>

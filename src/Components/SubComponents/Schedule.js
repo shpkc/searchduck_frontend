@@ -17,7 +17,7 @@ const Month = styled.div`
     color : #ea0414;
     font-weight : bold;
     font-size : 18px;
-    margin-bottom: 7px;
+    margin-bottom: 15px;
 `
 const MonthBorder = styled.div`
     background-color: #ebebeb
@@ -29,7 +29,7 @@ const MonthBorder = styled.div`
 const ListWrapper = styled.div``
 
 const ScheduleWrapper = styled.div`
-    margin: 35px 0
+    margin: 30px 0
    
 `
 const Date = styled.div`
@@ -73,7 +73,7 @@ const Schedule = ({julyList, augustList, decemberList}) => {
             {augustList.map((schedule) => 
             <ScheduleWrapper>  
                 <Date>
-                    {schedule.date}:
+                    {schedule.date}
                 </Date>
                 <Content>
                     {schedule.content}
@@ -87,7 +87,7 @@ const Schedule = ({julyList, augustList, decemberList}) => {
             {decemberList.map((schedule) => 
             <ScheduleWrapper>  
                 <Date>
-                    {schedule.date}:
+                    {schedule.date}
                 </Date>
                 <Content>
                     {schedule.content}
