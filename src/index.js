@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './Components/App';
 import {Provider} from "mobx-react";
-import CounterStore from "./store/counter";
+import Store from "./store/store"
 
-const counter = new CounterStore(); 
+const store = new Store(); 
 
 ReactDOM.render(
-    <Provider counter={counter}>
+    <Provider store={store}>
       <App />
     </Provider>,
     document.getElementById('root')

@@ -11,6 +11,7 @@ const Footer = styled.div`
     justify-content: center;
     align-items: center
     flex-direction: column;
+    border-top: 6px solid #dd0311;
     
 `
 

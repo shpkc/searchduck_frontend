@@ -72,8 +72,9 @@ const SearchWrapper = styled.div`
     width: 45px;
     text-align: center
     &:hover {
-        background-color : black
-        transition : all 0.6s
+        background-color : black;
+        transition : all 0.6s;
+        cursor: pointer;
 }
 `
 const TitleWrapper = styled.div`

@@ -1,11 +1,34 @@
 import { observable, action, toJS  } from 'mobx';
 import axios from 'axios';
 
-export default class CounterStore {
-  @observable number = 0;
+export default class Store {
+  @observable number = 1;
   @observable total = 0;
   @observable infoList = []
   @observable rate = 0;
+  @observable julyList = 
+  [
+    {date: "July 12, 13, 14",
+     content: "BLACKPINK Encore Tour in Bangkok"},
+    {date: "July 24",
+     content: "Release Date of Ragnarok M Game New Server Starring BLACKPINK Lisa"}
+  ]
+  @observable augustList =
+  [
+    {date: "August 8",
+     content: "BLACKPINK Anniversary and The Release Date of BLACKPINK 2018 Tour In Your Area Seoul DVD"},
+    {date: "August 17",
+     content: "BLACKPINK To Perform at a-nation 2019 Osaka, Japan"},
+    {date: "August 18",
+     content: "BLACKPINK To Perform at a-nation 2019 Osaka, Japan"},
+    {date: "August 31",
+     content: "Moonshot x Lisa Fan meeting in Bangkok Day 1"}
+  ]
+  @observable decemberList = 
+  [
+    {date: "December 4",
+     content: "BLACKPINK Japan Dome Tour 2019-2020 – Tokyo"}
+  ]
 
   @action increase = (price) => {
     this.number++;

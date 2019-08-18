@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import {SearchIcon} from "../Components/Icons";
+import {SmallSearchIcon} from "../Components/Icons";
+import Schedule from "../Components/SubComponents/Schedule";
 
 const MainWrapper = styled.div`
     width: 100%;
@@ -109,9 +110,10 @@ export default () => {
                 <SearchFormWrapper>
                     <SearchForm placeholder="Search.." />
                     <SearchIconWrapper>
-                        <SearchIcon/>
+                        <SmallSearchIcon/>
                     </SearchIconWrapper>
                 </SearchFormWrapper>
+                <Schedule/>
             </SubWrapper>        
         </Main>
         </MainWrapper>
