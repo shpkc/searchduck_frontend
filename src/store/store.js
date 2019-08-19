@@ -8,7 +8,34 @@ export default class Store {
   @observable rate = 0;
 
   @observable contentList = [
-
+    { mainUrl: "https://www.instagram.com/p/B1BlTUDjrNJ/embed/",
+      sort: "BLACKPINK INSTAGRAM",
+     title: "BLACKPINK LISA Instagram and Insta Story Update, August 11, 2019",
+     date: "AUGUST 11, 2019(KST)"
+    },
+    {mainUrl: "https://www.instagram.com/p/B0-IpJ6DZ2E/embed/",
+     sort: "BLACKPINK INSTAGRAM",
+     title: "BLACKPINK LISA Instagram and Insta Story Update, August 10, 2019",
+     date: "AUGUST 10, 2019(KST)"
+    },
+    {
+      mainUrl:"https://www.instagram.com/p/B03mYvUAA-O/embed/",
+     sort: "BLACKPINK INSTAGRAM",
+     title: "Tommy Brown With BLACKPINK, August 8, 2019",
+     date: "AUGUST 8, 2019(KST)"
+  },
+    {
+      mainUrl:"https://www.instagram.com/p/B0nK8nNHN43/embed/",
+     sort: "BLACKPINK INSTAGRAM",
+     title: "BLACKPINK OFFICIAL Instagram and Insta Story Update, August 1, 2019",
+     date: "AUGUST 1, 2019(KST)"
+    },
+    {
+      mainUrl:"https://www.instagram.com/p/B1MbzWcABhG/embed/",
+      sort: "BLACKPINK INSTAGRAM",
+     title: "Producer Tommy Brown Shared New Photos with BLACKPINK and Ariana Grande",
+     date: "AUGUST 11, 2019(KST)"
+    }
 
   ]
   
