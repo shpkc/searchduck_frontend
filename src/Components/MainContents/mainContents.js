@@ -26,7 +26,16 @@ const Frame = styled.div`
         border: 1px solid rgb(219, 219, 219);
     }
     border-bottom: 1px solid #eee;
-    margin-bottom:50px;
+    margin-bottom: 100px;
+    img{
+        max-width: 365px
+        max-height: 365px
+        &:hover{
+            opacity: 0.6
+            transition: opacity .2s ease-in-out;
+        }
+
+    }
 `
 const FrameContents = styled.div`
     display: flex;
@@ -35,7 +44,6 @@ const FrameContents = styled.div`
     text-align: center;
     justify-content: center;
     align-items: center;
-    margin-bottom: 150px;
 
 `
 
@@ -81,6 +89,7 @@ const ReadMore = styled.div`
         transition: all 0.6s;
         cursor: pointer;
     }
+    margin-bottom: 50px;
 `
 
 const MainContents = ({contentList}) => {
@@ -88,7 +97,7 @@ const MainContents = ({contentList}) => {
         <IframeWrapper>
                     {contentList.map((content) => 
                     <Frame>
-                    <iframe src={content.mainUrl} height="630"/>
+                    <img src={content.img} alt=""/>
                     <FrameContents>
                         <Sort>
                             {content.sort}

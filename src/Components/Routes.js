@@ -6,6 +6,7 @@ import contact from "../Routes/contact";
 import policy from "../Routes/policy";
 import donate from "../Routes/donate";
 import advertise from "../Routes/advertise";
+import schedule from "../Routes/schedule";
 
 const AppRouter = () => (
     <Switch>
@@ -15,6 +16,7 @@ const AppRouter = () => (
         <Route exact path="/policy" component={policy}/>
         <Route exact path="/donate" component={donate}/>
         <Route exact path="/advertise" component={advertise}/>
+        <Route exact path="/schedule" component={schedule}/>
     </Switch>
 )
 
