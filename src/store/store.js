@@ -6,6 +6,8 @@ export default class Store {
   @observable total = 0;
   @observable infoList = []
   @observable rate = 0;
+  @observable defaultPage = [1,2,3]
+  @observable currentPage = 1 
 
   @observable contentList = [
     { mainUrl: "https://www.instagram.com/p/B1SUAHanaEV/embed/",
@@ -67,6 +69,20 @@ export default class Store {
     {date: "December 4",
      content: "BLACKPINK Japan Dome Tour 2019-2020 – Tokyo"}
   ]
+
+  @action pageChange = (page) => {
+    this.currentPage = page;
+    if(this.currentPage <= 2){
+      this.defaultPage = [1,2,3]
+    }else if(this.currentPage >= 10){
+      this.defaultPage = [1,8,9,10]
+    }
+    else{
+      this.defaultPage = [1, this.currentPage-1, this.currentPage, this.currentPage+1]
+    }
+    
+    
+  }
 
   @action increase = (price) => {
     this.number++;

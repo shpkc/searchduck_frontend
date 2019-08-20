@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import { observer, inject } from 'mobx-react';
 import {Arrow} from "../Icons";
+import { Link } from "react-router-dom";
 
 const IframeWrapper = styled.div`
     display: flex;
@@ -116,7 +117,7 @@ const Next = styled.div`
     }
 `
 
-const MainContents = ({contentList}) => {
+const MainContents = ({contentList, currentPage, defaultPage, pageChange}) => {
 
     return(
         <IframeWrapper>
@@ -141,19 +142,14 @@ const MainContents = ({contentList}) => {
                     </Frame>
                     )}
         <NextPageWrapper>
-            <Next>
-                1
-            </Next>
-            <Next>
-                2
-            </Next>
-            <Next>
-                ...
-            </Next>
-            <Next>
-                10
-            </Next>
-            <Next>
+            {defaultPage.map((page) => (
+                <Link onClick={()=>pageChange(page)} to={`/page/${page}`} >
+                <Next>
+                {page}
+                </Next>
+                </Link>
+            ))}
+             <Next>
                 <Arrow/>
             </Next>
         </NextPageWrapper>
@@ -163,6 +159,9 @@ const MainContents = ({contentList}) => {
 
 
 export default inject(({store})=>({
-    contentList : store.contentList
+    contentList : store.contentList,
+    currentPage : store.currentPage,
+    defaultPage : store.defaultPage,
+    pageChange : store.pageChange
   }
   ))(observer(MainContents))

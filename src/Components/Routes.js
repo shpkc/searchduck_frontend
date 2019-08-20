@@ -17,6 +17,7 @@ const AppRouter = () => (
         <Route exact path="/donate" component={donate}/>
         <Route exact path="/advertise" component={advertise}/>
         <Route exact path="/schedule" component={schedule}/>
+        <Route path="/page=2" component={main}/>
     </Switch>
 )
 
