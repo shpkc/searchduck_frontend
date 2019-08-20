@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import { observer, inject } from 'mobx-react';
 import {Arrow} from "../Icons";
@@ -117,11 +117,14 @@ const Next = styled.div`
     }
 `
 
-const MainContents = ({contentList, currentPage, defaultPage, pageChange}) => {
-
+const MainContents = ({showList, currentPage, defaultPage, pageChange, changeContentList}) => {
+    useEffect(() => {
+        changeContentList(currentPage)
+    }, [currentPage])
+    
     return(
         <IframeWrapper>
-                    {contentList.map((content, index) => 
+                    {showList.map((content, index) => 
                     <Frame index={index}>
                     <img src={content.img} alt=""/>
                     <FrameContents>
@@ -143,7 +146,7 @@ const MainContents = ({contentList, currentPage, defaultPage, pageChange}) => {
                     )}
         <NextPageWrapper>
             {defaultPage.map((page) => (
-                <Link onClick={()=>pageChange(page)} to={`/page/${page}`} >
+                <Link onClick={()=>pageChange(page)} >
                 <Next>
                 {page}
                 </Next>
@@ -162,6 +165,8 @@ export default inject(({store})=>({
     contentList : store.contentList,
     currentPage : store.currentPage,
     defaultPage : store.defaultPage,
-    pageChange : store.pageChange
-  }
+    pageChange : store.pageChange,
+    changeContentList : store.changeContentList,
+    showList : store.showList  
+}
   ))(observer(MainContents))

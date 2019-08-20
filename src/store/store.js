@@ -7,7 +7,8 @@ export default class Store {
   @observable infoList = []
   @observable rate = 0;
   @observable defaultPage = [1,2,3]
-  @observable currentPage = 1 
+  @observable currentPage = 1
+  @observable showList = []
 
   @observable contentList = [
     { mainUrl: "https://www.instagram.com/p/B1SUAHanaEV/embed/",
@@ -42,8 +43,40 @@ export default class Store {
       sort: "BLACKPINK INSTAGRAM",
      title: "Producer Tommy Brown Shared New Photos with BLACKPINK and Ariana Grande",
      date: "AUGUST 11, 2019(KST)"
-    }
-
+    },
+    {
+      mainUrl:"https://www.instagram.com/p/BxTnP8vn1H3/embed/",
+      img:"https://scontent-icn1-1.cdninstagram.com/vp/c404b8e00542633038a4c0c20e32668a/5DD87298/t51.2885-15/sh0.08/e35/s640x640/58408977_456625678442317_1578105146690898681_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+      sort: "BLACKPINK INSTAGRAM",
+     title: "Producer Tommy Brown Shared New Photos with BLACKPINK and Ariana Grande",
+     date: "AUGUST 11, 2019(KST)"
+    },
+    {
+    mainUrl:"https://www.instagram.com/p/BxUFUKUnzIx/embed/",
+      img:"https://scontent-icn1-1.cdninstagram.com/vp/09ab33288bfbc90048946fe982e6779b/5DDDA851/t51.2885-15/sh0.08/e35/s640x640/58409852_440201470127244_3198878444359669683_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+      sort: "BLACKPINK INSTAGRAM",
+     title: "Producer Tommy Brown Shared New Photos with BLACKPINK and Ariana Grande",
+     date: "AUGUST 11, 2019(KST)"
+  },
+  {
+    mainUrl:"https://www.instagram.com/p/BxyqYMqHu3/embed/",
+      img:"https://scontent-icn1-1.cdninstagram.com/vp/4b28d32f3eb36f9619f13ceefc9f7b43/5E1371C1/t51.2885-15/sh0.08/e35/s640x640/60006168_444703222990391_1211824016050930931_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+      sort: "BLACKPINK INSTAGRAM",
+     title: "Producer Tommy Brown Shared New Photos with BLACKPINK and Ariana Grande",
+     date: "AUGUST 11, 2019(KST)"
+  },
+  {
+    mainUrl:"https://www.instagram.com/p/Bx3J7oenTtB/embed/",
+    img:"https://scontent-icn1-1.cdninstagram.com/vp/170092be7711b14c68269e9d8f23ddac/5D5DF163/t51.2885-15/sh0.08/e35/s640x640/59874101_1094273004101370_7967483152494676986_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+    sort: "BLACKPINK INSTAGRAM",
+    title: "Producer Tommy Brown Shared New Photos with BLACKPINK and Ariana Grande",
+    date: "AUGUST 11, 2019(KST)"},
+    {
+    mainUrl:"https://www.instagram.com/p/Bxym3cGHLwA/embed/",
+    img:"https://scontent-icn1-1.cdninstagram.com/vp/8edbccf8ff2bc82888611f0f9b7c77a9/5D5DDB17/t51.2885-15/sh0.08/e35/s640x640/59449246_481797315693108_2947998295386422608_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+    sort: "BLACKPINK INSTAGRAM",
+    title: "Producer Tommy Brown Shared New Photos with BLACKPINK and Ariana Grande",
+    date: "AUGUST 11, 2019(KST)"}
   ]
   
   @observable julyList = 
@@ -70,6 +103,10 @@ export default class Store {
      content: "BLACKPINK Japan Dome Tour 2019-2020 – Tokyo"}
   ]
 
+  @action changeContentList = (index) => {
+    this.showList = this.contentList.slice(5 * (index-1) , 5 * index)
+  }
+
   @action pageChange = (page) => {
     this.currentPage = page;
     if(this.currentPage <= 2){
@@ -80,8 +117,6 @@ export default class Store {
     else{
       this.defaultPage = [1, this.currentPage-1, this.currentPage, this.currentPage+1]
     }
-    
-    
   }
 
   @action increase = (price) => {
