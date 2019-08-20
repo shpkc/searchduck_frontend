@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import { observer, inject } from 'mobx-react';
+import {Arrow} from "../Icons";
 
 const IframeWrapper = styled.div`
     display: flex;
@@ -25,8 +26,8 @@ const Frame = styled.div`
     iframe{
         border: 1px solid rgb(219, 219, 219);
     }
-    border-bottom: 1px solid #eee;
-    margin-bottom: 100px;
+    border-bottom:  ${props=>props.index == 4 ? "0" : "1px solid #eee"}
+    margin-bottom: 80px;
     img{
         max-width: 365px
         max-height: 365px
@@ -34,7 +35,6 @@ const Frame = styled.div`
             opacity: 0.6
             transition: opacity .2s ease-in-out;
         }
-
     }
 `
 const FrameContents = styled.div`
@@ -91,12 +91,37 @@ const ReadMore = styled.div`
     }
     margin-bottom: 50px;
 `
+const NextPageWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: -30px
+`
+const Next = styled.div`
+    color:#fff
+    font-size: 0.875rem;
+    width: 66px;
+    height: 66px;
+    background-color:#020202
+    font-weight: bold
+    margin-right: 3px;
+    line-height: 66px;
+    fill: white;
+    &:hover{
+        background-color: #ea0414;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+`
 
 const MainContents = ({contentList}) => {
+
     return(
         <IframeWrapper>
-                    {contentList.map((content) => 
-                    <Frame>
+                    {contentList.map((content, index) => 
+                    <Frame index={index}>
                     <img src={content.img} alt=""/>
                     <FrameContents>
                         <Sort>
@@ -115,6 +140,23 @@ const MainContents = ({contentList}) => {
                         </FrameContents>
                     </Frame>
                     )}
+        <NextPageWrapper>
+            <Next>
+                1
+            </Next>
+            <Next>
+                2
+            </Next>
+            <Next>
+                ...
+            </Next>
+            <Next>
+                10
+            </Next>
+            <Next>
+                <Arrow/>
+            </Next>
+        </NextPageWrapper>
         </IframeWrapper>
     )
 }

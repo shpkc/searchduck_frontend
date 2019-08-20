@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import {SmallSearchIcon} from "../Components/Icons";
 import Schedule from "../Components/SubComponents/Schedule";
 import { observer, inject } from 'mobx-react';
 import MainContents from "../Components/MainContents/mainContents";
