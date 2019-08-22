@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import Schedule from "../Components/SubComponents/Schedule";
 import { observer, inject } from 'mobx-react';
+import MainSchedule from "../Components/MainContents/mainSchedule";
 
 const MainWrapper = styled.div`
     width: 100%;
@@ -36,6 +37,7 @@ const MainPage = () => {
         <MainWrapper>
         <Main>
             <ContentsWrapper>
+                <MainSchedule/>
             </ContentsWrapper>
             <SubWrapper>
                 <Schedule/>

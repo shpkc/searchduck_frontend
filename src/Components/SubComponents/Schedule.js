@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { observer, inject } from 'mobx-react';
 import styled from "styled-components";
 import {SmallSearchIcon} from "../../Components/Icons"; 
+import Youtube from "../SubComponents/Youtube";
 
 const HeaderWrapper = styled.div`
     color : #3d3d3d;
@@ -101,6 +102,7 @@ const Schedule = ({julyList, augustList, decemberList}) => {
                     <SmallSearchIcon/>
                 </SearchIconWrapper>
             </SearchFormWrapper>
+        <Youtube />
         <HeaderWrapper>
             BLACKPINK UPCOMING SCHEDULE 2019
         </HeaderWrapper>

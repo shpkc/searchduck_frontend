@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { observer, inject } from 'mobx-react';
 import { Link } from "react-router-dom";
 import {TwitIcon, YoutubeIcon, FacebookIcon, SearchIcon} from "./Icons"
 
-const Header = styled.div`
+const Wrapper = styled.div`
     background-color : black
     height: 45px;
     width: 100%;
@@ -150,31 +151,31 @@ const Menu = styled.div`
         height: 2px;
         bottom: 0;
         background-color: #dd0311;
+        margin-bottom: 10px;
         visibility: hidden;
         transform: scaleX(0);
         transition: all 0.5s 
-        margin-bottom: 10px;
+        
     }
     &:hover:before{
         visibility: visible;
         transform: scaleX(1)
     }
-    
-
 `
 
 
-export default () => {
+const Header = ({pageChange}) => {
     const [yHeight, yChange] = useState(0)
+
     useEffect(()=>{
         window.onscroll = () => {
             yChange(window.pageYOffset)
         }
     },[yHeight])
-
+    
     return (
         <>
-    <Header>
+    <Wrapper>
         <HeaderWrapper>
         <IconWrapper>
             <TwitterWrapper>
@@ -191,9 +192,9 @@ export default () => {
         <SearchIcon/>
         </SearchWrapper>
         </HeaderWrapper>
-    </Header>
+    </Wrapper>
     <TitleWrapper>
-        <Link to={""}>
+        <Link to={""} onClick={()=>pageChange(1)}>
         <Title>
             SEARCH DOL
         </Title>
@@ -206,10 +207,10 @@ export default () => {
     </TitleWrapper>
     <MenuWrapper >
         <Menus height={yHeight}>
-            <Link to={""}>
+            <Link to={""} onClick={()=>pageChange(1)}>
             <Menu width={"67%"}>NEWS UPDATE</Menu>
             </Link>
-            <Link to={"/schedule"}>
+            <Link to={"/schedule"} >
             <Menu width={"59%"}>SCHEDULE</Menu>
             </Link>
             <Link to={"/music"}>
@@ -229,3 +230,8 @@ export default () => {
     </>
     )
 }
+
+export default inject(({store})=>({
+    pageChange : store.pageChange
+}
+  ))(observer(Header))
