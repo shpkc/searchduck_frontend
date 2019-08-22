@@ -213,11 +213,11 @@ const Header = ({pageChange}) => {
             <Link to={"/schedule"} >
             <Menu width={"59%"}>SCHEDULE</Menu>
             </Link>
-            <Link to={"/music"}>
-            <Menu width={"48%"}>MUSIC</Menu>
-            </Link>
             <Link to={"/merch"}>
             <Menu width={"73%"}>BLACKPINK MERCH</Menu>
+            </Link>
+            <Link to={"/music"}>
+            <Menu width={"48%"}>MUSIC</Menu>
             </Link>
             <Link to={"/performance"}>
             <Menu width={"68%"}>PERFORMANCE</Menu>
