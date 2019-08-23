@@ -7,6 +7,7 @@ import policy from "../Routes/policy";
 import donate from "../Routes/donate";
 import advertise from "../Routes/advertise";
 import schedule from "../Routes/schedule";
+import merch from "../Routes/merch"
 
 const AppRouter = () => (
     <Switch>
@@ -17,6 +18,7 @@ const AppRouter = () => (
         <Route exact path="/donate" component={donate}/>
         <Route exact path="/advertise" component={advertise}/>
         <Route exact path="/schedule" component={schedule}/>
+        <Route exact path="/merch" component={merch}/>
         <Route path="/page=2" component={main}/>
     </Switch>
 )

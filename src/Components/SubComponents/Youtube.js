@@ -27,10 +27,11 @@ const Data = styled.div`
     }
     text-align: center;
     &:hover{
-        opacity: 0.6
+        opacity: 0.7
         transition: opacity .2s ease-in-out;
         div:last-child{
             opacity:1
+            transition: opacity .2s ease-in-out;
         }
     }
 `
@@ -71,7 +72,7 @@ export default () => {
                 <Data>
                     <a href={"https://www.youtube.com/watch?v="+data.id.videoId} target="_blank">
                         <Youtube>
-                        <img src={data.snippet.thumbnails.medium.url} />
+                        <img src={data.snippet.thumbnails.medium.url} alt=""/>
                         <Title>
                             {data.snippet.title.replace(/&#39;/gi, "'")}
                         </Title>

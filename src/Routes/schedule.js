@@ -24,6 +24,7 @@ const ContentsWrapper = styled.div`
 
 const SubWrapper = styled.div`
     width: 30%;
+    margin-bottom: 200px;
 `
 
 

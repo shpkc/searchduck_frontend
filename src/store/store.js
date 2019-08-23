@@ -150,11 +150,11 @@ export default class Store {
   }
 
   @action getInfo = async(kind) => {
-    if(kind == "capital"){
+    if(kind === "capital"){
       const temp = await this.capitalApi();
       this.setInfo(temp)
     }
-    else if(kind == "rate"){
+    else if(kind === "rate"){
       const temp = await this.rateApi();
       this.setRate(temp)
     }
