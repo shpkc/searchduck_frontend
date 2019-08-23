@@ -208,6 +208,9 @@ const Header = ({pageChange}) => {
     <MenuWrapper >
         <Menus height={yHeight}>
             <Link to={""} onClick={()=>pageChange(1)}>
+            <Menu width={"64%"}>SNS UPDATE</Menu>
+            </Link>
+            <Link to={"/news"}>
             <Menu width={"67%"}>NEWS UPDATE</Menu>
             </Link>
             <Link to={"/schedule"} >
@@ -216,14 +219,8 @@ const Header = ({pageChange}) => {
             <Link to={"/merch"}>
             <Menu width={"73%"}>BLACKPINK MERCH</Menu>
             </Link>
-            <Link to={"/music"}>
-            <Menu width={"48%"}>MUSIC</Menu>
-            </Link>
             <Link to={"/performance"}>
             <Menu width={"68%"}>PERFORMANCE</Menu>
-            </Link>
-            <Link to={"/ranking"}>
-            <Menu width={"57%"}>RANKING</Menu>
             </Link>
         </Menus>
     </MenuWrapper>

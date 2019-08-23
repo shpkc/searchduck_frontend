@@ -18,10 +18,16 @@ const Main = styled.div`
     max-width: ${props => props.theme.maxWidth};
     display: flex;
     flex-wrap: wrap;
+    div:nth-child(3n){
+        margin-right: 0
+    }
+    
 `
 const Product = styled.div`
+display: flex;
+flex-direction: column;
 width: 30%;
-margin-right: 35px;
+margin-right: 55px;
 img{
     width: 200px;
     vertical-align: middle
@@ -30,8 +36,6 @@ img{
         transition: opacity .2s ease-in-out;
     }
 }
-display: flex;
-flex-direction: column;
 
 `
 const Image = styled.div`

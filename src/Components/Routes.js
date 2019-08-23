@@ -8,6 +8,7 @@ import donate from "../Routes/donate";
 import advertise from "../Routes/advertise";
 import schedule from "../Routes/schedule";
 import merch from "../Routes/merch"
+import news from "../Routes/news"
 
 const AppRouter = () => (
     <Switch>
@@ -19,6 +20,7 @@ const AppRouter = () => (
         <Route exact path="/advertise" component={advertise}/>
         <Route exact path="/schedule" component={schedule}/>
         <Route exact path="/merch" component={merch}/>
+        <Route exact path="/news" component={news}/>
         <Route path="/page=2" component={main}/>
     </Switch>
 )
