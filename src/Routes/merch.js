@@ -102,7 +102,7 @@ const Merch = () => {
         <Product>
             <Image>
             <a href="https://amzn.to/2KPnJBx" target="_blank">
-            <img src="https://images-na.ssl-images-amazon.com/images/I/51qs8CDeh%2BL._AC_UL160_SR160,160_.jpg"/>
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51qs8CDeh%2BL._UX679_.jpg"/>
             </a>
             </Image>
             
@@ -130,7 +130,7 @@ const Merch = () => {
         <Product>
             <Image>
             <a href="https://amzn.to/2ZqNfFi"target="_blank"> 
-            <img src="https://images-na.ssl-images-amazon.com/images/I/81QX375EqUL._AC_UL320_SR250,320_.jpg"/>
+            <img src="https://images-na.ssl-images-amazon.com/images/I/81QX375EqUL._UX679_.jpg"/>
             </a>
             </Image>
             
@@ -158,7 +158,7 @@ const Merch = () => {
         <Product>
         <Image>
         <a href="https://amzn.to/2NqebyQ" target="_blank">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/81eRAr6KYxL._AC_UL320_SR242,320_.jpg"/>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/81eRAr6KYxL._UX679_.jpg"/>
         </a>
         </Image>
         
@@ -186,7 +186,7 @@ const Merch = () => {
         <Product>
             <Image>
         <a href="https://amzn.to/3203FSG" target="_blank">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/512ARN5otoL._AC_UL160_SR160,160_.jpg"/>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/512ARN5otoL._UX679_.jpg"/>
         </a>
         </Image>
         
@@ -215,7 +215,7 @@ const Merch = () => {
         <Product>
         <Image>
         <a href="https://amzn.to/2NBoCjh" target="_blank">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/51YD3Vx-SjL._AC_UL160_SR160,160_.jpg"/>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/51YD3Vx-SjL._UX679_.jpg"/>
         </a>
         </Image>
         
@@ -245,7 +245,7 @@ const Merch = () => {
         <Product>
         <Image>
         <a href="https://amzn.to/2zib3wE" target="_blank">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/71pvaIr0-9L._AC_UL160_SR160,160_.jpg"/>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/71pvaIr0-9L._UX679_.jpg"/>
         </a>
         </Image>
        
@@ -274,7 +274,7 @@ const Merch = () => {
         <Product>
             <Image>
         <a href="https://amzn.to/2Hnlu6r" target="_blank">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/51nnJNslNzL._AC_UL160_SR160,160_.jpg"/>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/51nnJNslNzL._UX679_.jpg"/>
         </a>
         </Image>
         
@@ -303,7 +303,7 @@ const Merch = () => {
         <Product>
         <Image>
         <a href="https://amzn.to/2Ns4xvE" target="_blank">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/610uvq3MxeL._AC_UL270_SR270,270_.jpg"/>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/610uvq3MxeL._UX679_.jpg"/>
         </a>
         </Image>
         
