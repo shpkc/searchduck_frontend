@@ -125,9 +125,9 @@ export default class Store {
   }
   
 
-  @action capitalApi = () => {
+  @action redditApi = () => {
 
-    return axios.get("https://restcountries.eu/rest/v2/all?fields=alpha2Code;capital;name;region;callingCodes")
+    return axios.get("https://www.reddit.com/r/BlackPink/rising.json")
           .then(response => response.data)
           .catch(err => console.log(err))
     
@@ -149,15 +149,9 @@ export default class Store {
     this.setInfo(temp)
   }
 
-  @action getInfo = async(kind) => {
-    if(kind === "capital"){
-      const temp = await this.capitalApi();
-      this.setInfo(temp)
-    }
-    else if(kind === "rate"){
-      const temp = await this.rateApi();
-      this.setRate(temp)
-    }
+  @action getApi = async() => {
+    const temp = await this.redditApi();
+    this.setInfo(temp)
     
   }
 

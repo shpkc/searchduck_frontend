@@ -48,5 +48,6 @@ const MainPage = () => {
 
 
 export default inject(({store})=>({
+    
   }
   ))(observer(MainPage))
